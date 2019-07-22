@@ -1,0 +1,7 @@
+[workspace]
+members = [
+    "asymmetric",
+    "core",
+    "elliptic",
+    "x509",
+]

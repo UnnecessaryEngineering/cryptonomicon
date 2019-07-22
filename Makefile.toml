@@ -1,0 +1,10 @@
+[config]
+skip_core_tasks = true
+init_task = "init"
+
+[tasks.init]
+
+[tasks.default]
+workspace = false
+dependencies = [
+]

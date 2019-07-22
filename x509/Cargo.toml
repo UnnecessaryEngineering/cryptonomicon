@@ -1,0 +1,24 @@
+[package]
+name = "cryptonomicon-x509"
+version = "0.1.0"
+authors = ["Sean Bruton <sean@unnecessary.engineering>"]
+edition = "2018"
+publish = false
+description = "Easy-to-use X.509 certificate library"
+homepage = "https://labs.unnecessary.engineering/cryptonomicon"
+repository = "https://github.com/UnnecessaryEngineering/cryptonomicon"
+readme = "README.md"
+keywords = ["pki", "x509", "certificate"]
+categories = ["api-bindings", "cryptography", "data-structures", "embedded", "no-std"]
+license = "MIT OR Apache-2.0"
+
+[badges]
+travis-ci = { repository = "UnnecessaryEngineering/cryptonomicon", branch = "master", service = "github" }
+codecov = { repository = "UnnecessaryEngineering/cryptonomicon", branch = "master", service = "github" }
+is-it-maintained-issue-resolution = { repository = "UnnecessaryEngineering/cryptonomicon" }
+is-it-maintained-open-issues = { repository = "UnnecessaryEngineering/cryptonomicon" }
+maintenance = { status = "actively-developed" }
+
+[dependencies]
+
+[features]
