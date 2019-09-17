@@ -22,6 +22,13 @@ maintenance = { status = "actively-developed" }
 [dependencies]
 cryptonomicon-asymmetric = { path = "../asymmetric", optional = true }
 cryptonomicon-elliptic = { path = "../elliptic", optional = true }
+cryptonomicon-pkcs10 = { path = "../pkcs10", optional = true }
+cryptonomicon-x500 = { path = "../x500", optional = true }
 cryptonomicon-x509 = { path = "../x509", optional = true }
 
 [features]
+asymmetric = ["cryptonomicon-asymmetric"]
+elliptic = ["asymmetric", "cryptonomicon-elliptic"]
+pkcs10 = ["asymmetric", "cryptonomicon-pkcs10"]
+x500 = ["cryptonomicon-x500"]
+x509 = ["x500", "cryptonomicon-x509"]

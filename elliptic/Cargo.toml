@@ -21,6 +21,8 @@ maintenance = { status = "actively-developed" }
 
 [dependencies]
 cryptonomicon-asymmetric = { path = "../asymmetric" }
-openssl = "0.10.24"
+openssl = "0.10"
+ed25519-dalek = "1.0.0-pre.1"
+rand = "0.6"
 
 [features]

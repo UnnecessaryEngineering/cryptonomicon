@@ -3,5 +3,7 @@ members = [
     "asymmetric",
     "core",
     "elliptic",
+    "pkcs10",
+    "x500",
     "x509",
 ]

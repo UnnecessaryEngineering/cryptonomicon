@@ -20,5 +20,8 @@ is-it-maintained-open-issues = { repository = "UnnecessaryEngineering/cryptonomi
 maintenance = { status = "actively-developed" }
 
 [dependencies]
+cryptonomicon-x500 = { path = "../x500" }
+chrono = "0.4.9"
+cryptonomicon-asymmetric = { path = "../asymmetric" }
 
 [features]

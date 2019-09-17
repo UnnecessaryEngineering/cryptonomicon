@@ -1,0 +1,9 @@
+[package]
+name = "cryptonomicon-pkcs10"
+version = "0.1.0"
+authors = ["Sean Bruton <sean@unnecessary.engineering>"]
+edition = "2018"
+
+[dependencies]
+cryptonomicon-asymmetric = { path = "../asymmetric" }
+cryptonomicon-x500 = { path = "../x500" }

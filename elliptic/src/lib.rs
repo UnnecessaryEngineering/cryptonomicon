@@ -1,35 +1,28 @@
-use cryptonomicon_asymmetric::{PublicKey, PrivateKey, KeyPair};
+use cryptonomicon_asymmetric::KeyPair;
 
-pub struct ECPublicKey;
+pub mod curve25519;
 
-impl PublicKey for ECPublicKey {
+#[derive(Debug)]
+pub enum Error {
+    RandomFailure { cause: rand::Error },
 }
 
-pub struct ECPrivateKey;
-
-impl PrivateKey for ECPrivateKey {
-}
-
-pub struct ECKeyPair {
-    public_key: ECPublicKey,
-    private_key: ECPrivateKey,
-}
-
-impl ECKeyPair {
-    pub fn generate_prime256_v1() -> Self {
-        Self {
-            public_key: ECPublicKey {},
-            private_key: ECPrivateKey {},
-        }
+impl From<rand::Error> for Error {
+    fn from(cause: rand::Error) -> Self {
+        Self::RandomFailure { cause }
     }
 }
 
-impl KeyPair for ECKeyPair {
-    fn public_key(&self) -> &PublicKey {
-        &self.public_key
-    }
+pub type Result<T> = std::result::Result<T, Error>;
 
-    fn private_key(&self) -> &PrivateKey {
-        &self.private_key
+pub enum EllipticCurve {
+    Curve25519,
+}
+
+impl EllipticCurve {
+    pub fn generate_keypair(self) -> Result<Box<dyn KeyPair>> {
+        Ok(Box::new(match self {
+            Self::Curve25519 => curve25519::generate_keypair()?,
+        }))
     }
 }
